@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Letter for You</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('bgletterm.png');
+        }
+
+        #envelope {
+            font-size: 100px;
+            color: red;
+            cursor: pointer;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        #message-container {
+            position: absolute;
+            top: 67%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #ffe8f2;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 1s ease;
+            text-align: center;
+        }
+
+        #love-message {
+            display: none;
+            font-family: 'Calibri';
+            font-size: 18px;
+            color: #333;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="envelope" onclick="showLoveMessage()"><img src="envelope.gif" width="auto" height="180"></div>
+    <img src="text2.png">
+    <div id="message-container">
+        <p id="love-message"></p>
+    </div>
+
+    <script>
+        function showLoveMessage() {
+            var envelope = document.getElementById("envelope");
+            var messageContainer = document.getElementById("message-container");
+            var loveMessage = document.getElementById("love-message");
+
+            // Envelope transition effect
+            envelope.style.transform = "scale(0.5)";
+            setTimeout(function () {
+                envelope.style.color = "#ff6666"; // Change heart color
+                envelope.style.transform = "scale(1)";
+            }, 300);
+
+            // Set your beautifully styled love message here
+            var messageText = `
+<h3> Happy Valentine Micelll</h3>
+
+       <p style="text-align:left;"> 1 planet, 7 oceans, 7 continents, 195 countries, 8 billion people, and somehow I was lucky enough to meet you…</p>
+
+<p style="text-align:left;">Hiii cell, how’s your day? Is it good?<br>
+On this day, 14 February 2024, I am very glad and grateful to know you, and will always so. Thank you very much, you’ve come into my high school life and glimmered my days. I wasn’t lying about what I’ve ever said before, the first time I saw you, it felt different from the other. You have beautiful eyes, beautiful appearance, and beautiful personality. I like the way you smile, the way you talk, the way you see, the way you laugh, and many more I couldn't say here. I like everything about you.</p>
+
+<p style="text-align:left;">Meeting you is one of the sweetest experiences I’ve ever had. I’ll never forget the moment when I first met you. It took me a few hours until I was finally brave enough to text you for the first time WKWKWK. After all of that, I enjoy every moment I’ve spent with you. You’ve successfully brought true happiness and joy to me. </p>
+
+<p style="text-align:left;">Always do things that make you happy and rely on God in everything you do. May God always protect you in every journey of your life. I hope we can spend more time together. Also, I apologize if I have ever made a mistake. Lastly, my playlist name is actually referring to a girl named Michelle Valencia Valerie HHEHEHE; If I were an artist, your portraiture would be the most beautiful art I’ve made. </p>
+
+<p style="text-align:left;">You’re out of my league. <br><br>
+
+Sincerely, <br>
+<b>Nico
+
+
+      `;
+
+            loveMessage.innerHTML = messageText;
+
+            // Gradual reveal effect
+            setTimeout(function () {
+                messageContainer.style.opacity = "1";
+                loveMessage.style.display = "block";
+            }, 1000); // Adjust the delay as needed
+        }
+    </script>
+</body>
+
+</html>
